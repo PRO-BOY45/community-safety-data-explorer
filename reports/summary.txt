@@ -1,0 +1,14 @@
+COMMUNITY SAFETY DATA EXPLORER
+========================================
+Total count: 157
+
+YEAR-WISE ANALYSIS
+2023: 46
+2024: 55
+2025: 56
+
+CATEGORY-WISE ANALYSIS
+Traffic-related: 58
+Theft: 40
+Fraud: 32
+Public nuisance: 27
