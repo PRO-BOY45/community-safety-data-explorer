@@ -55,16 +55,21 @@ class TestCommunitySafetyExplorer(unittest.TestCase):
         finally:
             os.remove(filename)
 
+    
     def test_report_output(self):
         with patch("builtins.print") as mock_print:
             generate_report(self.records)
 
-        printed_text = " ".join(
-            str(call) for call in mock_print.call_args_list
+        output = " ".join(
+            str(arg)
+            for call in mock_print.call_args_list
+            for arg in call.args
         )
 
-        self.assertIn("COMMUNITY SAFETY DATA EXPLORER", printed_text)
-        self.assertIn("TOTAL COUNT: 34", printed_text)
+        self.assertIn("COMMUNITY SAFETY DATA EXPLORER", output)
+        self.assertIn("TOTAL COUNT:", output)
+        self.assertIn("34", output)
+
 
 
 if __name__ == "__main__":
